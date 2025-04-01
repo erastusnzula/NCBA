@@ -2,6 +2,7 @@ package com.example.ncbabankapplication.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -25,6 +26,7 @@ import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Key
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material.icons.filled.NotificationsNone
 import androidx.compose.material.icons.filled.Whatsapp
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -34,6 +36,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.produceState
@@ -94,7 +97,7 @@ fun Welcome(navController: NavController) {
                     contentDescription = null,
                     contentScale = ContentScale.FillBounds,
                     modifier = Modifier
-                        .fillMaxWidth(.65f)
+                        .fillMaxWidth(.7f)
                         .fillMaxHeight()
                 )
                 Column (
@@ -103,13 +106,19 @@ fun Welcome(navController: NavController) {
                     modifier = Modifier
                         .fillMaxSize()
                         .background(colorResource(R.color.white))
+                        .clickable {
+                            navController.navigate(Screens.Login.route)
+                        }
                 ){
                     IconButton(
                         modifier = Modifier
-                            .size(80.dp).clip(CircleShape)
+                            .size(80.dp)
+                            .clip(CircleShape)
                             .background(colorResource(R.color.primary))
 
-                        ,onClick = {}) {
+                        ,onClick = {
+                            navController.navigate(Screens.Login.route)
+                        }) {
                         Icon(
                             imageVector = Icons.Filled.Key,
                             contentDescription = null,
@@ -119,9 +128,18 @@ fun Welcome(navController: NavController) {
                                 .rotate(45f)
                         )
                     }
-                    Text(
-                        text = "LOGIN"
-                    )
+                    TextButton(
+                        modifier = Modifier,
+                        colors = ButtonDefaults.textButtonColors(
+                            contentColor = colorResource(R.color.secondary)
+                        )
+                        ,onClick = {
+                            navController.navigate(Screens.Login.route)
+                        }) {
+                        Text(
+                            text = "LOGIN",
+                        )
+                    }
                 }
 
             }
@@ -205,7 +223,8 @@ fun Welcome(navController: NavController) {
                     ){
                         IconButton(
                             modifier = Modifier
-                                .size(50.dp).clip(CircleShape)
+                                .size(50.dp)
+                                .clip(CircleShape)
                                 .background(Color.Green)
                             ,onClick = {}) {
                             Icon(
@@ -219,7 +238,8 @@ fun Welcome(navController: NavController) {
                         }
                         IconButton(
                             modifier = Modifier
-                                .size(50.dp).clip(CircleShape)
+                                .size(50.dp)
+                                .clip(CircleShape)
                                 .background(Color.LightGray)
                             ,onClick = {}) {
                             Icon(
@@ -232,7 +252,8 @@ fun Welcome(navController: NavController) {
                         }
                         IconButton(
                             modifier = Modifier
-                                .size(50.dp).clip(CircleShape)
+                                .size(50.dp)
+                                .clip(CircleShape)
                                 .background(Color.LightGray)
                             ,onClick = {}) {
                             Icon(
@@ -288,7 +309,7 @@ fun Welcome(navController: NavController) {
 
                     }
                     Image(
-                        painter = painterResource(R.drawable.ncba_logo),
+                        painter = painterResource(R.drawable.vh),
                         contentScale = ContentScale.FillWidth,
                         contentDescription = null
                     )
@@ -320,13 +341,15 @@ fun Welcome(navController: NavController) {
 fun HomeTopBar(navController: NavController, scope: CoroutineScope, drawerState: DrawerState){
     Row(
         modifier = Modifier
-            .fillMaxWidth(),
+            .fillMaxWidth()
+            .background(colorResource(R.color.white)),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
         IconButton(
             modifier = Modifier
-                .size(80.dp)
+                .padding(start = 20.dp)
+                .size(90.dp)
             ,onClick = {
             scope.launch {
                 drawerState.apply {
@@ -340,7 +363,7 @@ fun HomeTopBar(navController: NavController, scope: CoroutineScope, drawerState:
                 contentDescription = null,
                 tint = Color.Unspecified,
                 modifier = Modifier
-                    .size(80.dp)
+                    .size(90.dp)
             )
         }
         Row(
@@ -352,8 +375,9 @@ fun HomeTopBar(navController: NavController, scope: CoroutineScope, drawerState:
                     .size(28.dp)
                 ,onClick = {}) {
                 Icon(
-                    imageVector = Icons.Filled.Notifications,
+                    imageVector = Icons.Filled.NotificationsNone,
                     contentDescription = null,
+                    tint = colorResource(R.color.secondary),
                     modifier = Modifier
                         .size(28.dp)
                 )
@@ -361,14 +385,15 @@ fun HomeTopBar(navController: NavController, scope: CoroutineScope, drawerState:
 
             IconButton(
                 modifier = Modifier
-                    .size(50.dp)
+                    .padding(start = 20.dp, end = 20.dp)
+                    .size(40.dp)
                 ,onClick = {}) {
                 Icon(
                     imageVector = Icons.Filled.Menu,
                     contentDescription = null,
+                    tint = colorResource(R.color.secondary),
                     modifier = Modifier
-                        .padding(start = 20.dp)
-                        .size(50.dp)
+                        .size(40.dp)
                 )
             }
 

@@ -14,6 +14,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.ncbabankapplication.screens.Home
+import com.example.ncbabankapplication.screens.Login
 import com.example.ncbabankapplication.screens.Screens
 import com.example.ncbabankapplication.screens.Welcome
 import com.example.ncbabankapplication.ui.theme.NCBABANKAPPLICATIONTheme
@@ -25,7 +27,6 @@ class MainActivity : ComponentActivity() {
         setContent {
             NCBABANKAPPLICATIONTheme {
                 NavigationStack()
-
             }
         }
     }
@@ -37,6 +38,12 @@ fun NavigationStack(){
     NavHost(navController=navController, startDestination = Screens.Welcome.route) {
         composable(route=Screens.Welcome.route){
             Welcome(navController=navController)
+        }
+        composable(route=Screens.Home.route){
+            Home(navController=navController)
+        }
+        composable(route=Screens.Login.route){
+            Login(navController=navController)
         }
     }
 }
