@@ -13,11 +13,13 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Login
+import androidx.compose.material.icons.filled.Create
 import androidx.compose.material.icons.filled.Login
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.ToggleOn
@@ -64,14 +66,14 @@ fun Home(navController: NavController) {
                 Text(
                     text = "Welcome JOHN DOE JANE"
                 )
-                Row(horizontalArrangement = Arrangement.End,
+                Row(
+                    horizontalArrangement = Arrangement.End,
                     verticalAlignment = Alignment.CenterVertically,
                     modifier = Modifier
                         .fillMaxWidth()
                 ) {
                     IconButton(
-                        modifier = Modifier
-                        ,onClick = {}) {
+                        modifier = Modifier, onClick = {}) {
                         Icon(
                             imageVector = Icons.Default.Notifications,
                             contentDescription = null,
@@ -82,26 +84,27 @@ fun Home(navController: NavController) {
                     IconButton(onClick = {}) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.Login,
-                            contentDescription = null
+                            contentDescription = null,
+                            modifier = Modifier
                         )
                     }
                 }
             }
         }
-    ) {innerPadding->
-        Column (
+    ) { innerPadding ->
+        Column(
             modifier = Modifier
                 .padding(innerPadding)
                 .fillMaxSize()
                 .background(colorResource(R.color.primary).copy(.5f))
                 .padding(8.dp)
-        ){
-            Column (
+        ) {
+            Column(
                 verticalArrangement = Arrangement.Center,
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(50.dp)
-            ){
+            ) {
                 Text(
                     text = "Your Relationship Manager is >>"
                 )
@@ -122,8 +125,7 @@ fun Home(navController: NavController) {
                         .fillMaxWidth()
                 ) {
                     TextButton(
-                        modifier = Modifier
-                        ,onClick = {}) {
+                        modifier = Modifier, onClick = {}) {
                         Text(
                             text = "BANKING"
                         )
@@ -174,9 +176,7 @@ fun Home(navController: NavController) {
                         defaultElevation = 5.dp
                     ),
                     modifier = Modifier
-                        .fillMaxWidth()
-
-                    ,onClick = {}) {
+                        .fillMaxWidth(), onClick = {}) {
                     Row(
                         horizontalArrangement = Arrangement.SpaceBetween,
                         verticalAlignment = Alignment.CenterVertically,
@@ -195,8 +195,7 @@ fun Home(navController: NavController) {
                                 containerColor = colorResource(R.color.secondary)
                             ),
                             modifier = Modifier,
-                            shape = RoundedCornerShape(8.dp)
-                            ,onClick = {}) {
+                            shape = RoundedCornerShape(8.dp), onClick = {}) {
                             Text(
                                 text = "View Balance",
                                 fontSize = 12.sp
@@ -206,8 +205,7 @@ fun Home(navController: NavController) {
                             colors = ButtonDefaults.buttonColors(
                                 containerColor = colorResource(R.color.secondary)
                             ),
-                            shape = RoundedCornerShape(8.dp)
-                            ,onClick = {}) {
+                            shape = RoundedCornerShape(8.dp), onClick = {}) {
                             Text(
                                 text = "View Statement",
                                 fontSize = 12.sp
@@ -224,9 +222,7 @@ fun Home(navController: NavController) {
                         defaultElevation = 5.dp
                     ),
                     modifier = Modifier
-                        .fillMaxWidth()
-
-                    ,onClick = {}) {
+                        .fillMaxWidth(), onClick = {}) {
                     Row(
                         horizontalArrangement = Arrangement.SpaceBetween,
                         verticalAlignment = Alignment.CenterVertically,
@@ -245,8 +241,7 @@ fun Home(navController: NavController) {
                                 containerColor = colorResource(R.color.secondary)
                             ),
                             modifier = Modifier,
-                            shape = RoundedCornerShape(8.dp)
-                            ,onClick = {}) {
+                            shape = RoundedCornerShape(8.dp), onClick = {}) {
                             Text(
                                 text = "View Balance",
                                 fontSize = 12.sp
@@ -256,8 +251,7 @@ fun Home(navController: NavController) {
                             colors = ButtonDefaults.buttonColors(
                                 containerColor = colorResource(R.color.secondary)
                             ),
-                            shape = RoundedCornerShape(8.dp)
-                            ,onClick = {}) {
+                            shape = RoundedCornerShape(8.dp), onClick = {}) {
                             Text(
                                 text = "View Statement",
                                 fontSize = 12.sp
@@ -268,6 +262,46 @@ fun Home(navController: NavController) {
                 }
 
             }
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .fillMaxHeight(.2f)
+            ) {
+                Text(
+                    text = "QUICK ACCESS MENU"
+                )
+
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth(.6f)
+                ) {
+                    TextButton(onClick = {}) {
+                        Text(
+                            text = "CUSTOMIZE"
+                        )
+                    }
+
+                    Icon(
+                        imageVector = Icons.Filled.Create,
+                        contentDescription = null,
+                        modifier = Modifier
+                            .align(Alignment.CenterEnd)
+                    )
+                }
+
+
+            }
+            Column (
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .fillMaxHeight()
+                    .clip(RoundedCornerShape(5.dp))
+                    .background(colorResource(R.color.white))
+            ){
+
+            }
 
         }
     }
@@ -275,7 +309,7 @@ fun Home(navController: NavController) {
 
 @Preview
 @Composable
-fun HomePreview(){
+fun HomePreview() {
     NCBABANKAPPLICATIONTheme {
         Home(rememberNavController())
     }
