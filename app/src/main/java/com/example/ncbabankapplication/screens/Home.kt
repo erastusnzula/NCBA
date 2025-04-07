@@ -23,6 +23,8 @@ import androidx.compose.material.icons.filled.Create
 import androidx.compose.material.icons.filled.Login
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.ToggleOn
+import androidx.compose.material3.Badge
+import androidx.compose.material3.BadgedBox
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -36,6 +38,7 @@ import androidx.compose.material3.SingleChoiceSegmentedButtonRow
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -72,14 +75,28 @@ fun Home(navController: NavController) {
                     modifier = Modifier
                         .fillMaxWidth()
                 ) {
-                    IconButton(
-                        modifier = Modifier, onClick = {}) {
+
+                    BadgedBox(
+                        modifier = Modifier
+                            .padding(end = 20.dp),
+                        badge = {
+                            Badge(
+                                containerColor = Color.Red,
+                                contentColor = Color.White,
+                                modifier = Modifier
+                            ) {
+                                Text("8")
+                            }
+
+                        }
+                    ) {
                         Icon(
-                            imageVector = Icons.Default.Notifications,
-                            contentDescription = null,
-                            tint = Color.Black
+                            imageVector = Icons.Filled.Notifications,
+                            contentDescription =null
                         )
                     }
+
+
 
                     IconButton(onClick = {}) {
                         Icon(
@@ -293,13 +310,13 @@ fun Home(navController: NavController) {
 
 
             }
-            Column (
+            Column(
                 modifier = Modifier
                     .fillMaxWidth()
                     .fillMaxHeight()
                     .clip(RoundedCornerShape(5.dp))
                     .background(colorResource(R.color.white))
-            ){
+            ) {
 
             }
 
