@@ -14,11 +14,15 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Login
+import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Create
 import androidx.compose.material.icons.filled.Login
 import androidx.compose.material.icons.filled.Notifications
@@ -85,7 +89,7 @@ fun Home(navController: NavController) {
                                 contentColor = Color.White,
                                 modifier = Modifier
                             ) {
-                                Text("8")
+                                Text("80")
                             }
 
                         }
@@ -311,12 +315,96 @@ fun Home(navController: NavController) {
 
             }
             Column(
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .fillMaxHeight()
+                    .fillMaxHeight(.7f)
                     .clip(RoundedCornerShape(5.dp))
                     .background(colorResource(R.color.white))
             ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    IconButton(
+                        modifier = Modifier
+                            .size(100.dp),
+                        onClick = {}) {
+                        Icon(
+                            imageVector = Icons.Filled.AccountCircle,
+                            contentDescription = null,
+                            modifier = Modifier
+                                .size(100.dp),
+                        )
+                    }
+                    IconButton(
+                        modifier = Modifier
+                            .size(100.dp),
+                        onClick = {}) {
+                        Icon(
+                            imageVector = Icons.Filled.AccountCircle,
+                            contentDescription = null,
+                            modifier = Modifier
+                                .size(100.dp),
+                        )
+                    }
+                    IconButton(
+                        modifier = Modifier
+                            .size(100.dp)
+                        ,onClick = {}) {
+                        Icon(
+                            imageVector = Icons.Filled.AccountCircle,
+                            contentDescription = null,
+                            modifier = Modifier
+                                .size(100.dp),
+                        )
+                    }
+
+                }
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    IconButton(
+                        modifier = Modifier
+                            .size(100.dp),
+                        onClick = {}) {
+                        Icon(
+                            imageVector = Icons.Filled.AccountCircle,
+                            contentDescription = null,
+                            modifier = Modifier
+                                .size(100.dp),
+                        )
+                    }
+                    IconButton(
+                        modifier = Modifier
+                            .size(100.dp),
+                        onClick = {}) {
+                        Icon(
+                            imageVector = Icons.Filled.AccountCircle,
+                            contentDescription = null,
+                            modifier = Modifier
+                                .size(100.dp),
+                        )
+                    }
+                    IconButton(
+                        modifier = Modifier
+                            .size(100.dp),
+                        onClick = {}) {
+                        Icon(
+                            imageVector = Icons.Filled.AccountCircle,
+                            contentDescription = null,
+                            modifier = Modifier
+                                .size(100.dp),
+                        )
+                    }
+
+                }
 
             }
 
