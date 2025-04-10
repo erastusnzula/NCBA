@@ -49,6 +49,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -334,8 +335,9 @@ fun Home(navController: NavController) {
                             .size(100.dp),
                         onClick = {}) {
                         Icon(
-                            imageVector = Icons.Filled.AccountCircle,
+                            painter = painterResource(R.drawable.mpesa),
                             contentDescription = null,
+                            tint = Color.Unspecified,
                             modifier = Modifier
                                 .size(100.dp),
                         )
