@@ -49,7 +49,6 @@ import androidx.navigation.compose.rememberNavController
 import com.example.ncbabankapplication.R
 import com.example.ncbabankapplication.ui.theme.NCBABANKAPPLICATIONTheme
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Home(navController: NavController) {
     Scaffold(

@@ -59,8 +59,6 @@ import kotlinx.coroutines.launch
 
 @Composable
 fun Welcome(navController: NavController) {
-    val width = LocalConfiguration.current.screenWidthDp.dp
-    val height = LocalConfiguration.current.screenHeightDp.dp
     val scope = rememberCoroutineScope()
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     Scaffold(
