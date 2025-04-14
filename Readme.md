@@ -7,6 +7,3 @@ NCBA APP
     <img src="ncba_images/login.png" alt="" width="200px">
 </div>
 
-
-Technologies
-===========
