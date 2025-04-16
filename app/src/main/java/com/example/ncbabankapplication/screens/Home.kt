@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Login
@@ -86,7 +87,7 @@ fun Home(navController: NavController) {
                     ) {
                         Icon(
                             imageVector = Icons.Filled.Notifications,
-                            contentDescription =null
+                            contentDescription = null
                         )
                     }
 
@@ -315,85 +316,242 @@ fun Home(navController: NavController) {
             ) {
                 Row(
                     modifier = Modifier
-                        .fillMaxWidth(),
+                        .fillMaxWidth()
+                        .padding(8.dp),
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    IconButton(
-                        modifier = Modifier
-                            .size(100.dp),
-                        onClick = {}) {
-                        Icon(
-                            painter = painterResource(R.drawable.mpesa),
-                            contentDescription = null,
-                            tint = Color.Unspecified,
-                            modifier = Modifier
-                                .size(100.dp),
-                        )
-                    }
-                    IconButton(
-                        modifier = Modifier
-                            .size(100.dp),
-                        onClick = {}) {
-                        Icon(
-                            imageVector = Icons.Filled.AccountCircle,
-                            contentDescription = null,
-                            modifier = Modifier
-                                .size(100.dp),
-                        )
-                    }
-                    IconButton(
+                    Box(
                         modifier = Modifier
                             .size(100.dp)
-                        ,onClick = {}) {
-                        Icon(
-                            imageVector = Icons.Filled.AccountCircle,
-                            contentDescription = null,
-                            modifier = Modifier
-                                .size(100.dp),
-                        )
+                            .clip(CircleShape)
+                    ) {
+                        Card(
+                            modifier = Modifier,
+                            onClick = {},
+                            shape = CircleShape,
+                            colors = CardDefaults.cardColors(
+                                containerColor = Color.White
+                            ),
+                            elevation = CardDefaults.cardElevation(
+                                defaultElevation = 10.dp
+                            ),
+                        ) {
+                            IconButton(
+                                modifier = Modifier
+                                    .fillMaxWidth(), onClick = {}) {
+                                Icon(
+                                    painter = painterResource(R.drawable.mps),
+                                    contentDescription = null,
+                                    tint = Color.Unspecified
+                                )
+                            }
+
+                            IconButton(
+                                modifier = Modifier
+                                    .fillMaxWidth(), onClick = {}) {
+                                Text(
+                                    text = "Mpesa"
+                                )
+                            }
+                        }
+
                     }
+
+                    Box(
+                        modifier = Modifier
+                            .size(100.dp)
+                            .clip(CircleShape)
+                    ) {
+                        Card(
+                            modifier = Modifier,
+                            onClick = {},
+                            shape = CircleShape,
+                            colors = CardDefaults.cardColors(
+                                containerColor = Color.White
+                            ),
+                            elevation = CardDefaults.cardElevation(
+                                defaultElevation = 10.dp
+                            ),
+                        ) {
+                            IconButton(
+                                modifier = Modifier
+                                    .fillMaxWidth(), onClick = {}) {
+                                Icon(
+                                    painter = painterResource(R.drawable.mps),
+                                    contentDescription = null,
+                                    tint = Color.Unspecified
+                                )
+                            }
+
+                            IconButton(
+                                modifier = Modifier
+                                    .fillMaxWidth(), onClick = {}) {
+                                Text(
+                                    text = "Mpesa"
+                                )
+                            }
+                        }
+
+                    }
+
+                    Box(
+                        modifier = Modifier
+                            .size(100.dp)
+                            .clip(CircleShape)
+                    ) {
+                        Card(
+                            modifier = Modifier,
+                            onClick = {},
+                            shape = CircleShape,
+                            colors = CardDefaults.cardColors(
+                                containerColor = Color.White
+                            ),
+                            elevation = CardDefaults.cardElevation(
+                                defaultElevation = 10.dp
+                            ),
+                        ) {
+                            IconButton(
+                                modifier = Modifier
+                                    .fillMaxWidth(), onClick = {}) {
+                                Icon(
+                                    painter = painterResource(R.drawable.mps),
+                                    contentDescription = null,
+                                    tint = Color.Unspecified
+                                )
+                            }
+
+                            IconButton(
+                                modifier = Modifier
+                                    .fillMaxWidth(), onClick = {}) {
+                                Text(
+                                    text = "Mpesa"
+                                )
+                            }
+                        }
+
+                    }
+
 
                 }
                 Row(
                     modifier = Modifier
-                        .fillMaxWidth(),
+                        .fillMaxWidth()
+                        .padding(8.dp),
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    IconButton(
+                    Box(
                         modifier = Modifier
-                            .size(100.dp),
-                        onClick = {}) {
-                        Icon(
-                            imageVector = Icons.Filled.AccountCircle,
-                            contentDescription = null,
-                            modifier = Modifier
-                                .size(100.dp),
-                        )
+                            .size(100.dp)
+                            .clip(CircleShape)
+                    ) {
+                        Card(
+                            modifier = Modifier,
+                            onClick = {},
+                            shape = CircleShape,
+                            colors = CardDefaults.cardColors(
+                                containerColor = Color.White
+                            ),
+                            elevation = CardDefaults.cardElevation(
+                                defaultElevation = 10.dp
+                            ),
+                        ) {
+                            IconButton(
+                                modifier = Modifier
+                                    .fillMaxWidth(), onClick = {}) {
+                                Icon(
+                                    painter = painterResource(R.drawable.mps),
+                                    contentDescription = null,
+                                    tint = Color.Unspecified
+                                )
+                            }
+
+                            IconButton(
+                                modifier = Modifier
+                                    .fillMaxWidth(), onClick = {}) {
+                                Text(
+                                    text = "Mpesa"
+                                )
+                            }
+                        }
+
                     }
-                    IconButton(
+
+                    Box(
                         modifier = Modifier
-                            .size(100.dp),
-                        onClick = {}) {
-                        Icon(
-                            imageVector = Icons.Filled.AccountCircle,
-                            contentDescription = null,
-                            modifier = Modifier
-                                .size(100.dp),
-                        )
+                            .size(100.dp)
+                            .clip(CircleShape)
+                    ) {
+                        Card(
+                            modifier = Modifier,
+                            onClick = {},
+                            shape = CircleShape,
+                            colors = CardDefaults.cardColors(
+                                containerColor = Color.White
+                            ),
+                            elevation = CardDefaults.cardElevation(
+                                defaultElevation = 10.dp
+                            ),
+                        ) {
+                            IconButton(
+                                modifier = Modifier
+                                    .fillMaxWidth(), onClick = {}) {
+                                Icon(
+                                    painter = painterResource(R.drawable.mps),
+                                    contentDescription = null,
+                                    tint = Color.Unspecified
+                                )
+                            }
+
+                            IconButton(
+                                modifier = Modifier
+                                    .fillMaxWidth(), onClick = {}) {
+                                Text(
+                                    text = "Mpesa"
+                                )
+                            }
+                        }
+
                     }
-                    IconButton(
+
+                    Box(
                         modifier = Modifier
-                            .size(100.dp),
-                        onClick = {}) {
-                        Icon(
-                            imageVector = Icons.Filled.AccountCircle,
-                            contentDescription = null,
-                            modifier = Modifier
-                                .size(100.dp),
-                        )
+                            .size(100.dp)
+                            .clip(CircleShape)
+                    ) {
+                        Card(
+                            modifier = Modifier,
+                            onClick = {},
+                            shape = CircleShape,
+                            colors = CardDefaults.cardColors(
+                                containerColor = Color.White
+                            ),
+                            elevation = CardDefaults.cardElevation(
+                                defaultElevation = 10.dp
+                            ),
+                        ) {
+                            IconButton(
+                                modifier = Modifier
+                                    .fillMaxWidth(), onClick = {}) {
+                                Icon(
+                                    painter = painterResource(R.drawable.mps),
+                                    contentDescription = null,
+                                    tint = Color.Unspecified
+                                )
+                            }
+
+                            IconButton(
+                                modifier = Modifier
+                                    .fillMaxWidth(), onClick = {}) {
+                                Text(
+                                    text = "Mpesa"
+                                )
+                            }
+                        }
+
                     }
+
 
                 }
 
